@@ -76,3 +76,37 @@ body {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(1500%); } /* Move to outside the right edge */
 }
+/* Windows */
+.window {
+    width: 20px;
+    height: 20px;
+    background: yellow;
+    border: 2px solid black;
+    position: absolute;
+}
+
+/* Positioning windows inside buildings */
+.building .window:nth-child(1) { top: 50px; left: 15px; }
+.building .window:nth-child(2) { top: 100px; left: 15px; }
+.building .window:nth-child(3) { top: 150px; left: 15px; }
+
+/* Street Lamp */
+.street-lamp {
+    width: 10px;
+    height: 100px;
+    background: black;
+    position: absolute;
+    left: 85%;
+    bottom: 100px;
+}
+
+.street-lamp::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: yellow;
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    border-radius: 50%;
+}

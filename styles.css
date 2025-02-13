@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #ffcccc, #ff99cc); /* Valentine's Day themed background */
+}
+.cityscape {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.background {
+    position: absolute;
+    top: -50px; /* Move the background image up */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 50px); /* Adjust height to fit above the road */
+    display: none; /* Hide by default */
+    background-image: url('firewor.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1; /* Ensure it appears above other elements */
+}
+.cityscape:hover .background {
+    display: block; /* Show on hover */
+}
+.building {
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 400px;
+    background: gray;
+    z-index: 2; /* Ensure buildings appear above the background */
+}
+.road {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: #333;
+    z-index: 2; /* Ensure road appears above the background */
+}
+.heart {
+    position: absolute;
+    font-size: 50px; /* Adjust the size of the heart emoji */
+    animation: float 5s infinite;
+    z-index: 2; /* Ensure hearts appear above the background */
+}
+.car {
+    position: absolute;
+    font-size: 100px; /* Adjust the size of the car emoji */
+    bottom: 20px; /* Position the cars on the road */
+    z-index: 2; /* Ensure cars appear above the background */
+}
+.cloud {
+    position: absolute;
+    font-size: 125px; /* Adjust the size of the cloud emoji */
+    animation: moveClouds 20s linear infinite;
+    z-index: 2; /* Ensure clouds appear above the background */
+}
+.plane {
+    position: absolute;
+    font-size: 100px; /* Adjust the size of the plane emoji */
+    animation: movePlanes 20s linear infinite; /* Increased duration to 20s */
+    z-index: 2; /* Ensure plane appears above the background */
+}
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+@keyframes moveClouds {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+@keyframes movePlanes {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(1500%); } /* Move to outside the right edge */
+}
